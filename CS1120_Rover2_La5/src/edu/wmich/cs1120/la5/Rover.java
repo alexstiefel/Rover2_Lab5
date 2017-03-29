@@ -6,34 +6,8 @@ package edu.wmich.cs1120.la5;
 import java.util.*;
 public class Rover implements IRover
 {
-	private MapCreator mc;
-	private ArrayList<Area> pathway = new ArrayList<Area>();
+	private ArrayList<IArea> pathway = new ArrayList<IArea>();
 	
-	/**
-	 * Rover class constructor
-	 * Creates a MapCreator object
-	 */
-	public Rover()
-	{
-		this.mc = new MapCreator();
-	}
-	
-	/**
-	 * Sets the incoming object of MapCreator to the existing object
-	 * @param is the object of the class MapCreator
-	 */
-	public void setMapCreator(MapCreator mc)
-	{
-		this.mc = mc;
-	}
-	
-	/**
-	 * @return the object MapCreator
-	 */
-	public MapCreator getMapCreator()
-	{
-		return this.mc;
-	}
 	
 	/**
 	 * Takes the incoming variables and passes them to the another variable to be sent to another class
@@ -48,25 +22,35 @@ public class Rover implements IRover
 	/**
 	 * @return the ArrayList object that was set in the setPath method
 	 */
-	public ArrayList<Area> getPath()
+	public ArrayList<IArea> getPath()
 	{
 		return pathway;
 	}
 	
-	/**
-	 * Calculates the total value of the energy consumed in each area
-	 * @return the total value
-	 */
-	public double calculateEnergy()
-	{
-		double sum = 0;
+	
+
+	@Override
+	public void analyzePath() {
+		// TODO Auto-generated method stub
 		
-		for (int i = 0; i < pathway.size(); i++)
-		{
-			sum += pathway.get(i).calcConsumedEnergy();
-		}
+	}
+
+	@Override
+	public String getAnalysis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAnalysis() {
+		// TODO Auto-generated method stub
 		
-		return sum;
+	}
+
+	@Override
+	public void setPath(ArrayList<IArea> path) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 /**
