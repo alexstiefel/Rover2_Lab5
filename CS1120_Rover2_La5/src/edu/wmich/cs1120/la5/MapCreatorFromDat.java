@@ -23,51 +23,43 @@ public class MapCreatorFromDat implements IMapCreator
 		RandomAccessFile file = new RandomAccessFile(new File(fileName), "r");
 		int value = 0;
 		boolean input = false;
-		int i = 0;
-		int j = 0;
-		
+		int i = 0;		
 		while (input == false)
 		{
-			file.seek(value * 34);
-			
-			double basicEnergyCost = file.readDouble();
-			double elevation = file.readDouble();
-			double radiation = file.readDouble();
-			
-			if (radiation >= 0.5)
+			for(int j = 0; j < 10; j++)
 			{
-				terrainArea[i][j] = new HighArea(basicEnergyCost, elevation, radiation);
-			} 
-			else if (radiation < 0.5 && elevation > (threshold * 0.5))
-			{
-				terrainArea[i][j] = new HighArea(basicEnergyCost, elevation, radiation);
-			} 
-			else 
-			{
+				file.seek(value * 34);
+				
+				double basicEnergyCost = file.readDouble();
+				double elevation = file.readDouble();
+				double radiation = file.readDouble();
+				
+				if (radiation >= 0.5)
+				{
+					terrainArea[i][j] = new HighArea(basicEnergyCost, elevation, radiation);
+				} 
+				else if (radiation < 0.5 && elevation > (threshold * 0.5))
+				{
+					terrainArea[i][j] = new HighArea(basicEnergyCost, elevation, radiation);
+				} 
+				else 
+				{
 
-				terrainArea[i][j] = new LowArea(basicEnergyCost, elevation, radiation);
+					terrainArea[i][j] = new LowArea(basicEnergyCost, elevation, radiation);
+				}
+				
+				char operand = file.readChar();
+				int val1 = file.readInt();
+				int val2 = file.readInt();
+				expression = ExpressionFactory.getExpression(operand, val1, val2);
+				value = expression.getValue();
+				
+				if (value == -1)
+				{
+					input = true;
+				}
 			}
-			
-			if (j < 9)
-			{
-				j++;
-			}
-			else if (j == 9)
-			{
-				j = 0;
-				i++;
-			}
-			
-			char operand = file.readChar();
-			int val1 = file.readInt();
-			int val2 = file.readInt();
-			expression = ExpressionFactory.getExpression(operand, val1, val2);
-			value = expression.getValue();
-			
-			if (value == -1)
-			{
-				input = true;
-			}
+			i++;
 		}
 		
 		scanner.setTerrain(terrainArea);
