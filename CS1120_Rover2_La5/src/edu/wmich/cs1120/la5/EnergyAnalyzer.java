@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class EnergyAnalyzer implements IRover
 {
 	ArrayList<IArea> path;
-
+	String analysis;
+	double total;
 	/*
 	 * Sets the field path with the
 	 * parameter of the same data type
@@ -28,22 +29,20 @@ public class EnergyAnalyzer implements IRover
 	 */
 	public void analyzePath()
 	{
-		double totalEnergy = 0;
-		
 		for(int i=0;i<this.path.size();i++)
 		{
-			totalEnergy += this.path.get(i).getBasicEnergyCost();
+			total += this.path.get(i).getBasicEnergyCost();
 		}			
 	}
 
 	public String getAnalysis()
 	{
-		return null;
+		return String.valueOf(total);
 	}
 
 	public void setAnalysis()
 	{
-		
+		this.analysis="energy";
 	}
 
 }

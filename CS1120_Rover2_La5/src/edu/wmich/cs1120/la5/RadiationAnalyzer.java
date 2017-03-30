@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class RadiationAnalyzer implements IRover {
 
 	ArrayList<IArea> path;
-	
-	
+	double total;
+	String analysis;
 	
 	public void setPath(ArrayList<IArea> path) {
 		this.path=path;
@@ -26,21 +26,20 @@ public class RadiationAnalyzer implements IRover {
 	 * IArea object of the path
 	 */
 	public void analyzePath() {
-		double totalRadiation = 0;
 		for(int i=0;i<this.path.size();i++){
-			totalRadiation+= this.path.get(i).getRadiation();
+			total+= this.path.get(i).getRadiation();
 		}
 		
 	}
 
 	
 	public String getAnalysis() {
-		return null;
+		return  String.valueOf(total);
 	}
 
 	
 	public void setAnalysis() {
-		
+		this.analysis="Radiation";
 	}
 
 }

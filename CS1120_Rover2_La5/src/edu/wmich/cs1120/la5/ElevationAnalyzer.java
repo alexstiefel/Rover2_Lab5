@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class ElevationAnalyzer implements IRover
 {
 	ArrayList<IArea> path;
-	MapCreatorFromTxt field;
-	
+	String analysis;
+	double total;
 	/*
 	 * Sets the Field path with an 
 	 * array list returned from the TerrainScanner object
@@ -12,7 +12,7 @@ public class ElevationAnalyzer implements IRover
 	 */
 	public void setPath(ArrayList<IArea> path)
 	{
-		this.path = field.getScanner().getPath(startRow, startColumn);	
+		this.path = path;	
 	}
 
 	/*
@@ -31,24 +31,25 @@ public class ElevationAnalyzer implements IRover
 	 */
 	public void analyzePath()
 	{
-		double totalElevation = 0;
+	
 		
 		for(int i=0;i<this.path.size();i++)
 		{
-			totalElevation+= this.path.get(i).getElevation();
+			total+= this.path.get(i).getElevation();
 		}		
 	}
 
 	public String getAnalysis()
 	{
 		
-		return null;
+		return  String.valueOf(total);
 	}
 
 	public void setAnalysis()
 	{
-		
+		this.analysis="elevation";
 		
 	}
+
 
 }
