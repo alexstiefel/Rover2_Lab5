@@ -25,11 +25,11 @@ public interface IRover
 	public void analyzePath();
 
 	
-public String getAnalysis();
+	public String getAnalysis();
 
-public void setAnalysis();
+	public void setAnalysis();
 
-public String toString();
+	public String toString();
 }
 /**
  * end of interface

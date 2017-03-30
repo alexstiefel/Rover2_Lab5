@@ -6,7 +6,7 @@ package edu.wmich.cs1120.la5;
 import edu.wmich.cs1120.la5.TerrainScanner;
 import java.io.*;
 import java.util.*;
-public class MapCreator implements IMapCreator
+public class MapCreatorFromTxt implements IMapCreator
 {
 	private TerrainScanner scanner;
 	private Area[][] terrain = new Area[10][10];
@@ -15,7 +15,7 @@ public class MapCreator implements IMapCreator
 	 * MapCreator class constructor
 	 * Creates a TerrainScanner object
 	 */
-	public MapCreator()
+	public MapCreatorFromTxt()
 	{
 		this.scanner = new TerrainScanner();
 	}
