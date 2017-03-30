@@ -12,7 +12,7 @@ public class MapCreatorFromTxt implements IMapCreator
 	private Area[][] terrain = new Area[10][10];
 	
 	/**
-	 * MapCreator class constructor
+	 * MapCreatorFromTxt class constructor
 	 * Creates a TerrainScanner object
 	 */
 	public MapCreatorFromTxt()
