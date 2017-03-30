@@ -8,6 +8,7 @@ public class EnergyAnalyzer implements IRover
 	/*
 	 * Sets the field path with the
 	 * parameter of the same data type
+	 * @param The determined path from the GUI
 	 */
 	public void setPath(ArrayList<IArea> path)
 	{
@@ -16,6 +17,7 @@ public class EnergyAnalyzer implements IRover
 
 	/*
 	 * returns the path field
+	 * @return The selected path
 	 */
 	public ArrayList<IArea> getPath()
 	{
@@ -38,15 +40,24 @@ public class EnergyAnalyzer implements IRover
 /*
  * returns the results of the analysis
  * by passing the total to string
+ * @return The calculated value of the analyzed values
  */
 	public String getAnalysis()
 	{
 		return String.valueOf(total);
 	}
-
+/*
+ *Sets the analysis field to the string energy 
+ */
 	public void setAnalysis()
 	{
 		this.analysis="energy";
 	}
-
+/*
+ * Sets the name for the EnergyAnalyzer function in the GUI
+ * @return String name of function
+ */
+public String toString(){
+	return "EnergyAnalyzer";
+}
 }

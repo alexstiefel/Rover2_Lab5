@@ -7,13 +7,17 @@ public class RadiationAnalyzer implements IRover {
 	ArrayList<IArea> path;
 	double total;
 	String analysis;
-	
+	/*
+	 *Sets the path field to the determined path
+	 *@param the path arrayList from the GUI
+	 */
 	public void setPath(ArrayList<IArea> path) {
 		this.path=path;
 		
 	}
 /*
  * returns the path field
+ * @return The determined path
  */
 	public ArrayList<IArea> getPath() {
 	
@@ -35,6 +39,7 @@ public class RadiationAnalyzer implements IRover {
 	/*
 	 * returns the results of the analysis
 	 * by passing the total to string
+	 * @return The total value of the analyzed data passed to a string
 	 */
 	public String getAnalysis() {
 		return  String.valueOf(total);

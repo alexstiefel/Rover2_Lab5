@@ -8,7 +8,7 @@ public class ElevationAnalyzer implements IRover
 	/*
 	 * Sets the Field path with an 
 	 * array list returned from the TerrainScanner object
-	 *@param 
+	 *@param the array list of the designated path
 	 */
 	public void setPath(ArrayList<IArea> path)
 	{
@@ -18,6 +18,7 @@ public class ElevationAnalyzer implements IRover
 	/*
 	 * returns the field path which
 	 * is an array list of IArea objects
+	 * @return The path field
 	 */
 	public ArrayList<IArea> getPath()
 	{
@@ -41,13 +42,16 @@ public class ElevationAnalyzer implements IRover
 	/*
 	 * returns the results of the analysis
 	 * by passing the total to string
+	 * @return the calculated sum of the analyzed data
 	 */
 	public String getAnalysis()
 	{
 		
 		return  String.valueOf(total);
 	}
-
+/*
+ * sets the analysis field to the string elevation
+ */
 	public void setAnalysis()
 	{
 		this.analysis="elevation";
