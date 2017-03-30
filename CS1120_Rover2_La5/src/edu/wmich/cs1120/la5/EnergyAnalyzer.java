@@ -25,7 +25,8 @@ public class EnergyAnalyzer implements IRover
 	/*
 	 * Uses a for loop to add up
 	 * all of the Energies of each
-	 * IArea object of the path
+	 * IArea object of the path and
+	 * stores the result in the total field
 	 */
 	public void analyzePath()
 	{
@@ -34,7 +35,10 @@ public class EnergyAnalyzer implements IRover
 			total += this.path.get(i).getBasicEnergyCost();
 		}			
 	}
-
+/*
+ * returns the results of the analysis
+ * by passing the total to string
+ */
 	public String getAnalysis()
 	{
 		return String.valueOf(total);

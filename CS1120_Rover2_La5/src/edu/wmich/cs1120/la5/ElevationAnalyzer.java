@@ -38,7 +38,10 @@ public class ElevationAnalyzer implements IRover
 			total+= this.path.get(i).getElevation();
 		}		
 	}
-
+	/*
+	 * returns the results of the analysis
+	 * by passing the total to string
+	 */
 	public String getAnalysis()
 	{
 		

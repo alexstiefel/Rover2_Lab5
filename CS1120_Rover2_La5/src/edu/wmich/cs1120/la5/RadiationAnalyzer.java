@@ -32,7 +32,10 @@ public class RadiationAnalyzer implements IRover {
 		
 	}
 
-	
+	/*
+	 * returns the results of the analysis
+	 * by passing the total to string
+	 */
 	public String getAnalysis() {
 		return  String.valueOf(total);
 	}
